@@ -7,8 +7,8 @@
     "inject-tag-numbers": "node ./scripts/inject-tag-numbers.js",
     "rewrite-notes": "node ./scripts/rewrite-notes.js",
     "reformat": "node ./scripts/reformat.js",
-    "chapter": "./scripts/chapter.js",
-    "book": "./scripts/book.js",
+    "chapter": "node ./scripts/chapter.js",
+    "create-index": "node ./scripts/create-index.js",
     "build:chapters": "time ./build-chapters.sh"
   },
   "author": "",
