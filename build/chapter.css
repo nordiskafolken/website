@@ -50,36 +50,6 @@ ins:nth-child(even) {
   float: left;
 }
 
-@media (min-width: 800px) {
-  article {
-    position: relative;
-    width: calc(100vw - 32ch);
-    max-width: 60vw;
-    padding: 0 1rem;
-  }
-
-  ins {
-    position: absolute;
-    text-decoration: none;
-    font-style: italic;
-    width: 12ch;
-    text-align: center;
-    font-size: 0.8em;
-    margin: 0 -13ch 0 0;
-    right: 0;
-    outline: none;
-  }
-
-  ins::after {
-    clear: both;
-  }
-
-  ins:nth-child(even) {
-    margin: 0 0 0 -13ch;
-    left: 0;
-  }
-}
-
 article h1 {
   font-size: 1rem;
   font-style: italic;
@@ -102,13 +72,51 @@ article p::first-letter {
 }
 
 h1 + p::first-letter {
-  font-size: 12ch;
+  font-size: 6ch;
   float: left;
   margin: 0 0.5em;
   letter-spacing: 0;
   line-height: 1em;
 }
 
-p::first-letter::after {
-  clear: both;
+@media (min-width: 800px) {
+  article {
+    position: relative;
+    width: calc(100vw - 32ch);
+    max-width: 60vw;
+    padding: 0 1rem;
+  }
+
+  h1 + p::first-letter {
+    font-size: 12ch;
+    float: left;
+    margin: 0 0.5em;
+    letter-spacing: 0;
+    line-height: 1em;
+  }
+
+  p::first-letter::after {
+    clear: both;
+  }
+
+  ins {
+    position: absolute;
+    text-decoration: none;
+    font-style: italic;
+    width: 12ch;
+    text-align: center;
+    font-size: 0.8em;
+    margin: 0 -13ch 0 0;
+    right: 0;
+    outline: none;
+  }
+
+  ins::after {
+    clear: both;
+  }
+
+  ins:nth-child(even) {
+    margin: 0 0 0 -13ch;
+    left: 0;
+  }
 }
