@@ -1,3 +1,32 @@
+header,
+footer {
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+header {
+  border-bottom: 1px solid #aaa;
+}
+
+footer {
+  border-top: 1px solid #aaa;
+}
+
+header a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
 article {
   max-width: 60vw;
   margin: 0 auto;

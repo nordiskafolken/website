@@ -103,16 +103,16 @@ fs.readdir('./build', (err, files) => {
     })
     .forEach(file => {
       const [bookNumber, chapterNumber] = file.match(/B(\d+)K(\d+).html/).slice(1, 3).map(Number);
-      const chapterName = chapterNames[bookNumber][chapterNumber];
+      const chapterName = chapterNames[bookNumber][chapterNumber - 1];
 
       chapterLinks[bookNumber].push(`
         <a href="./${file}">${chapterName}</a>
       `);
     });
 
-  const indexHTMLContent = Object.keys(chapterLinks).map(bookNumber => {
+  const indexHTMLContent = Object.keys(chapterLinks).map((bookNumber, i) => {
     return `
-      <h2>Bok ${bookNumber}. ${bookNames[bookNumber]}</h2>
+      <h2>Bok ${bookNumber}. ${bookNames[i]}</h2>
 
       <ol>
         ${chapterLinks[bookNumber].map(a => `<li>${a}</li>`).join('')}
@@ -139,6 +139,9 @@ fs.readdir('./build', (err, files) => {
     <main>
       ${indexHTMLContent}
     </main>
+    <footer>
+      Ett hobbyprojekt av <a href="https://jeremy.se">Jeremy Karlsson</a>
+    </footer>
   </body>
   </html>
   `;
