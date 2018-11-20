@@ -93,18 +93,22 @@ fs.readdir('./build', (err, files) => {
     22: []
   };
 
-  files.forEach(file => {
-    const isChapter = file.match(/B\d+K\d+.html/g) !== null;
+  files
+    .filter(a => a.match(/B\d+K\d+.html/g) !== null)
+    .sort((a, b) => {
+      const [, aChapterNumber] = a.match(/B(\d+)K(\d+).html/).slice(1, 3).map(Number);
+      const [, bChapterNumber] = b.match(/B(\d+)K(\d+).html/).slice(1, 3).map(Number);
 
-    if (isChapter) {
+      return aChapterNumber - bChapterNumber;
+    })
+    .forEach(file => {
       const [bookNumber, chapterNumber] = file.match(/B(\d+)K(\d+).html/).slice(1, 3).map(Number);
       const chapterName = chapterNames[bookNumber][chapterNumber];
 
       chapterLinks[bookNumber].push(`
         <a href="./${file}">${chapterName}</a>
       `);
-    }
-  });
+    });
 
   const indexHTMLContent = Object.keys(chapterLinks).map(bookNumber => {
     return `
