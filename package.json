@@ -1,0 +1,20 @@
+{
+  "name": "nordiska-folken-templator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "transform.js",
+  "scripts": {
+    "inject-tag-numbers": "node ./scripts/inject-tag-numbers.js",
+    "rewrite-notes": "node ./scripts/rewrite-notes.js",
+    "reformat": "node ./scripts/reformat.js",
+    "chapter": "./scripts/chapter.js",
+    "book": "./scripts/book.js",
+    "build:chapters": "time ./build-chapters.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^10.12.6",
+    "commander": "^2.19.0"
+  }
+}

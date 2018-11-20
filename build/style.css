@@ -1,0 +1,61 @@
+article {
+  max-width: 60vw;
+  margin: 0 auto;
+  position: relative;
+}
+
+ins {
+  position: absolute;
+  text-decoration: none;
+  font-style: italic;
+  width: 12ch;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+ins:nth-child(odd) {
+  margin: 0 -13ch 0 0;
+  right: 0;
+}
+
+ins:nth-child(even) {
+  margin: 0 0 0 -13ch;
+  left: 0;
+}
+
+ins::after {
+  clear: both;
+}
+
+article h1 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+
+article p {
+  text-align: justify;
+  white-space: normal;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+  margin: 0;
+}
+
+article p::first-letter {
+  margin-left: 1em;
+}
+
+h1 + p::first-letter {
+  font-size: 12ch;
+  float: left;
+  margin: 0 0.5em;
+  letter-spacing: 0;
+  line-height: 1em;
+}
+
+p::first-letter::after {
+  clear: both;
+}

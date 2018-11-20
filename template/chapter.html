@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>${chapterName} - Historia om de Nordiska Folken</title>
+  <meta name="description" content="Kapitel ${chapterNumber} ur bok ${bookNumber}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": {
+      "rdfa": "http://www.w3.org/ns/rdfa#",
+      "schema": "http://schema.org/"
+    },
+    "@graph": [
+      {
+        "@id": "https://sv.nordiskafolken.se/bok-${bookNumber}",
+        "@type": "schema:Book",
+        "schema:author": "Olaus Magnus",
+        "schema:name": "${bookName} - Historia om de Nordiska Folken"
+      },
+      {
+        "@id": "_:",
+        "@type": "schema:Chapter",
+        "schema:isPartOf": {
+          "@id": "https://sv.nordiskafolken.se/bok-${bookNumber}"
+        },
+        "schema:name": "${chapterName}"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <article>${content}</article>
+</body>
+</html>
